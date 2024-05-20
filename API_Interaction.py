@@ -32,10 +32,15 @@ def deletebook(id):
     return response.json()
 
 if __name__ == "__main__":
+    #book = {
+    #    'author':"Paulo Coelho",
+     #   'title':"The Alchemist", 
+      #  "price": 25.50
+    #}
     book = {
         'author':"Paulo Coelho",
-        'title':"The Alchemist", 
-        "price": 25.50
+        'title':"Veronika Decides to Die", 
+        "price": 26.50
     }
     bookdiff = {
         "price": 33.50
@@ -43,5 +48,5 @@ if __name__ == "__main__":
     #print (readAllBooks())
     #print (getBookById(545))
     #print (deletebook(567))
-    #print (createbook(book))
+    print (createbook(book))
     #print (updatebook(1,bookdiff))
