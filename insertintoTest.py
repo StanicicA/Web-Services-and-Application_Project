@@ -9,7 +9,7 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 sql="insert into student (name, age) values (%s,%s)"
-values = ("Mary",21)
+values = ("David",23)
 
 cursor.execute(sql, values)
 

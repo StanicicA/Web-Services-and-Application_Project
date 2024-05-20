@@ -14,7 +14,7 @@ class BookDAO:
 bookDAO = BookDAO()
 
 if __name__ == "__main__":
-    book = {"id":1,"title":"blah","author":"someone","price":999} 
+    book = {"id":1,"title":"The Da Vinci Code","author":"Dan Brown","price":10.99}
     print ("test getall")
     print (f"\t{bookDAO.getAll()}")
     print ("test findById(1)")

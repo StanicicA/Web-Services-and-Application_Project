@@ -9,7 +9,7 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 sql="update student set name= %s, age=%s  where id = %s"
-values = ("Joe",33, 1)
+values = ("Ian",35, 1)
 
 cursor.execute(sql, values)
 
