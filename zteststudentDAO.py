@@ -1,13 +1,13 @@
 from zstudentDAO import studentDAO
 
 
-student = {
-  "name":"mark", 
+student2 = {
+  "firstname":"mark", 
   "age":31
   }
 
-student = studentDAO.create(student)
-studentid = student["id"]
+student2 = studentDAO.create(student2)
+studentid = student2["id"]
 
 result = studentDAO.findByID(studentid);
 print ("test create and find by id")
