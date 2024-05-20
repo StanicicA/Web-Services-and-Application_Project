@@ -3,16 +3,12 @@ Web Services and Application Big Project
 
 Creating a REST Server
 
-Description:
-
 Creating an application server that will implement a RESTful API.
 The API is allowing a user to perform CRUD operations on an entity
 Testing it using CURL
 
-Steps I was undertaking:
-
-• Designing the REST API (creating the document)
-• Creating a virtual environment to run a Flask server
+## Designing the REST API (creating the document)
+* Creating a virtual environment to run a Flask server
 • Creating a basic Flask Server
 • Modifying the Flask Server to deal with the required URL mappings
 • Implementing getAll and testing it
