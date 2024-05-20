@@ -13,13 +13,13 @@ def index():
 @app.route('/books')
 def getAll():
     #print("in getall")
-    results = bookDAO.getAll()
+    results = BookDao.getAll()
     return jsonify(results)
 
 #curl "http://127.0.0.1:5000/books/2"
 @app.route('/books/<int:id>')
 def findById(id):
-    foundBook = bookDAO.findByID(id)
+    foundBook = BookDao.findByID(id)
 
     return jsonify(foundBook)
 
@@ -35,14 +35,14 @@ def create():
         "author": request.json['author'],
         "price": request.json['price'],
     }
-    addedbook = bookDAO.create(book)
+    addedbook = BookDao.create(book)
     
     return jsonify(addedbook)
 
 #curl  -i -H "Content-Type:application/json" -X PUT -d "{\"title\":\"hello\",\"author\":\"someone\",\"price\":123}" http://127.0.0.1:5000/books/1
 @app.route('/books/<int:id>', methods=['PUT'])
 def update(id):
-    foundBook = bookDAO.findByID(id)
+    foundBook = BookDao.findByID(id)
     if not foundBook:
         abort(404)
     
@@ -58,7 +58,7 @@ def update(id):
         foundBook['author'] = reqJson['author']
     if 'price' in reqJson:
         foundBook['price'] = reqJson['price']
-    bookDAO.update(id,foundBook)
+    BookDao.update(id,foundBook)
     return jsonify(foundBook)
         
 
@@ -66,7 +66,7 @@ def update(id):
 
 @app.route('/books/<int:id>' , methods=['DELETE'])
 def delete(id):
-    bookDAO.delete(id)
+    BookDao.delete(id)
     return jsonify({"done":True})
 
 
