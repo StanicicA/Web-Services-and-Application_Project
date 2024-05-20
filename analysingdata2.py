@@ -13,7 +13,7 @@ parameterasDict = {
 
 def getAll():
     parameters = urllib.parse.urlencode(parameterasDict)
-    #print (parameters)
+    #printing (parameters)
     fullurl = url + "?" + parameters
     response = requests.get(fullurl)
     return response.json()

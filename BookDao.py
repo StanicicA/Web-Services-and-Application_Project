@@ -10,7 +10,6 @@ class BookDao:
             password = '',
             database ='datarepresentation'
         )
-        #print ("connection made")
 
     def create(self, book):
         cursor = self.db.cursor()
@@ -31,7 +30,7 @@ class BookDao:
         cursor.execute(sql)
         results = cursor.fetchall()
         returnArray = []
-        #print(results)
+        
         for result in results:
             resultAsDict = self.convertToDict(result)
             returnArray.append(resultAsDict)

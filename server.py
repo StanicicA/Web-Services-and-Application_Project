@@ -7,20 +7,12 @@ app = Flask(__name__, static_url_path='', static_folder='staticpages')
 @app.route('/')
 def index():
     return "hello"
-#get all
-
-
 @app.route('/books')
 def getAll():
     return jsonify(bookDao.getAll())
-
-# find By id
 @app.route('/books/<int:ISBN>')
 def findById(ISBN):
     return jsonify(bookDao.findById(ISBN))
-
-# create
-# curl -X POST -d "{\"Title\":\"test\", \"Author\":\"some guy\", \"Price\":123}" http://127.0.0.1:5000/books
 @app.route('/books', methods=['POST'])
 def create():
    
@@ -34,10 +26,6 @@ def create():
         "price": request.json["price"]
     }
     return jsonify(bookDao.create(book))
-
-  
-#update
-# curl -X PUT -d "{\"Title\":\"new Title\", \"Price\":999}" -H "content-type:application/json" http://127.0.0.1:5000/books/1
 @app.route('/books/<int:ISBN>', methods=['PUT'])
 def update(ISBN):
     foundBook=bookDao.findById(ISBN)
@@ -54,9 +42,6 @@ def update(ISBN):
     bookDao.update(currentBook)
 
     return jsonify(currentBook)
-
-#delete
-# curl -X DELETE http://127.0.0.1:5000/books/1
 @app.route('/books/<int:ISBN>', methods=['DELETE'])
 def delete(ISBN):
     bookDao.delete(ISBN)

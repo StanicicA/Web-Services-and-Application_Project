@@ -1,22 +1,13 @@
-# book dao skeleton
-# this is a demonstration of the type of function a data layer might have
-# Author: Andrew Beatty
-
-class BookDAO:
-    # get all          
+class BookDAO:         
     def getAll(self):
         #TODO implement
         return [{"id":1,"title":"blah","author":"someone","price":999}]
-    # find by id
     def findByID(self, id):
         return {"id":1,"title":"blah","author":"someone","price":999}
-    # create a book
     def create(self, book):
         return {"id":1,"title":"blah","author":"someone","price":999}
-    #update a book
     def update(self,id , book):
         return {"id":1,"title":"blah","author":"someone","price":999}
-    # delete a book of a given id    
     def delete(self, id):
         return True
         

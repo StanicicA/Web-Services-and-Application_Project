@@ -2,7 +2,6 @@ from flask import Flask, url_for, redirect
 
 app = Flask(__name__, static_url_path='', static_folder='staticpages')
 
-# mapping
 @app.route('/')
 def index():
     return "<h1>hi there mom</h1>"

@@ -1,8 +1,3 @@
-# converts a web page to a pdf 
-# This is to demonstrate API Keys
-# Author: Andrew Beatty
-
-
 import requests
 import urllib.parse
 from config import apikeys as cfg

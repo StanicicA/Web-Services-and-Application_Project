@@ -80,26 +80,21 @@
         console.log("in process")
         //console.log(result)
         for (book of result){
-            //console.log(book)
-            // issue the format of the book object is different from lab06.02
-            // there are two solutions change the book object in lan06.02 to have capitals 
-            // or convert
+
             displayBook = {}
             displayBook.id = book.id
             displayBook.author = book.Author
             displayBook.title = book.Title
             displayBook.price = book.Price
-            // you can now pass it to addBookToTable
             console.log(displayBook)
         }
     }
      getAll(processGetAllResponse)
 
-     ///// Create
     function processCreateResponse(result){
         console.log(result)
     }
-    //book = {"Title":"javascript","Author":"andrew","Price":12} 
+     //book = {"Title":"javascript","Author":"andrew","Price":12} 
     //createBook(book,processCreateResponse) 
 
     //// update
@@ -107,9 +102,9 @@
         console.log(result)
     }
     book = {id:155,"Price":999} 
-    //updateBook(book,processUpdateResponse)
+    //updatingBook
     
-    ////delete
+    ////deleting
     
     function processDeleteResponse(result){
         console.log("in pprocess delete")

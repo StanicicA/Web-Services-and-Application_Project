@@ -9,7 +9,6 @@ class StudentDAO:
     cursor =""
 
     def __init__(self): 
-        #these should be read from a config file
         self.host="localhost"
         self.user="root"
         self.password=""
@@ -85,7 +84,7 @@ class StudentDAO:
 
         self.connection.commit()
         self.closeAll
-        #print("delete done")
+       
         return True
 
     def convertToDict(self,resultLine):

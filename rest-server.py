@@ -1,6 +1,3 @@
-# flask server that links to a DAO
-# author: Andrew Beatty
-
 from flask import Flask, request, jsonify, abort
 from bookDAOskeleton import bookDAO
 
@@ -9,26 +6,15 @@ app = Flask(__name__)
 @app.route('/')
 def index():
         return "Hello world"
-
-# getall
-# curl http://127.0.0.1:5000/books
-
 @app.route('/books', methods=['GET'])
 def getall():
         return jsonify(bookDAO.getAll())
 
-# find by id
-# curl http://127.0.0.1:5000/books/1
-
 @app.route('/books/<int:id>', methods=['GET'])
 def findbyid(id):
         return jsonify(bookDAO.findByID(id))
-
-#create
-#curl -X POST -d "{\"title\":\"test\", \"author\":\"some guy\", \"price\":123}" http://127.0.0.1:5000/books
 @app.route('/books', methods=['POST'])
 def create():
-        # read json from the body
         jsonstring = request.json
         book = {}
 
@@ -45,9 +31,6 @@ def create():
         
         return jsonify(bookDAO.create(book))
 
-# update
-# curl -X PUT -d "{\"title\":\"test\", \"author\":\"some guy\", \"price\":123}" http://127.0.0.1:5000/books/1
-
 @app.route('/books/<int:id>', methods=['PUT'])
 def update(id):
         jsonstring = request.json
@@ -61,9 +44,6 @@ def update(id):
                 book["price"] = jsonstring["price"]
         
         return jsonify(bookDAO.update(id, book))
-
-# Delete
-# curl -X DELETE  http://127.0.0.1:5000/books/1
 
 @app.route('/books/<int:id>', methods=['DELETE'])
 def delete(id):
